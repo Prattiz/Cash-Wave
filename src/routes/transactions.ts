@@ -6,6 +6,16 @@ import { knex } from "../database";
 import { randomUUID } from 'node:crypto';
 
 export async function TransactionRoutes( app: FastifyInstance ){
+
+    app.get('/', async () => {
+
+        const transactions = await knex('transactions').select();
+
+        return {
+            transactions
+        };
+    });
+
     
     app.post('/', async ( request, reply ) => {
         
