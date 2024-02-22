@@ -7,13 +7,15 @@ import { randomUUID } from 'node:crypto';
 
 export async function TransactionRoutes( app: FastifyInstance ){
 
+    // -- GET FUNCTIONS -->
+
     app.get('/', async () => {
 
         const transactions = await knex('transactions').select();
 
         return {
             transactions
-        };
+        }
     });
 
     app.get('/:id', async ( request ) => {
@@ -32,6 +34,19 @@ export async function TransactionRoutes( app: FastifyInstance ){
             transactions,
         }
     });
+
+    app.get('/summary', async () => {
+
+        const summary = await knex('transactions').sum('amount', {as: 'sum amount'}).first();
+
+        return {
+            summary,
+        }
+    });
+
+
+
+    // -- POST FUNCTIONS -->
     
     app.post('/', async ( request, reply ) => {
         
