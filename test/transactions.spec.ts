@@ -122,7 +122,7 @@ describe('Transactions Routes ', () => {
       .expect(200)
 
     expect(summaryResponse.body.summary).toEqual({
-      amount: 3000,
+      sum_amount: 3000,
     })
 
   });

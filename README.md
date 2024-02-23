@@ -13,3 +13,4 @@ Cash Wave is a backend project developed in Node.js to facilitate money transact
 - Vitest
 - SuperTest
 - Zod
+- Tsup
