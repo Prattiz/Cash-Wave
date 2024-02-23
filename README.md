@@ -13,3 +13,31 @@ Cash Wave is a backend project developed in Node.js to facilitate money transact
 - Vitest
 - SuperTest
 - Zod
+
+## Installation -->
+
+### Clone this repository:
+
+`git clone https://github.com/prattiz/cash-wave.git `
+
+### Install project dependencies:
+
+`npm install`
+
+### Run database migrations:
+
+`npm run knex migrate:latest`
+
+## How To Use -->
+
+### Start the server:
+
+`npm run dev`
+
+### Running Tests:
+
+`npm run test`
+
+### Building:
+To build the project for production and generate JavaScript files, execute:
+`npm run build`
